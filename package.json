@@ -1,0 +1,14 @@
+{
+  "name": "sd-webui-modern",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "sass src/style.scss style.css --watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.63.5"
+  }
+}

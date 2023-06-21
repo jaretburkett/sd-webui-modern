@@ -1,0 +1,99 @@
+@import "vars.scss";
+@import "darkTheme.scss";
+@import "misc/emojis.scss";
+
+#txt2img_settings {
+  max-width: 512px;
+}
+@media screen and (max-width: 840px) {
+  #txt2img_settings {
+    max-width: 100%;
+  }
+}
+
+.contain {
+  .gradio-button.tool {
+    border-radius: var(--button-small-radius) !important;
+  }
+}
+
+.extra-networks {
+  .extra-network-thumbs {
+    max-height: 250px;
+    overflow: auto;
+    background: var(--background-fill-primary);
+    padding: 10px;
+    padding-left: $extra-networks-sidenav-width + 10px;
+    min-height: 150px;
+    @import "misc/scrollbar.scss";
+    .card {
+      transition: all 0.2s ease-in-out;
+      &.hover{
+        transform: scale(1.05);
+        box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+      }
+    }
+  }
+  
+  .extra-network-subdirs {
+    background: var(--background-fill-primary);
+    border-right: 1px solid var(--background-fill-secondary);
+    position: absolute;
+    left: 0;
+    width: $extra-networks-sidenav-width;
+    z-index: +10;
+    height: 100%;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    @import "misc/scrollbar.scss";
+    button.custom-button {
+      padding: 3px 8px;
+      justify-content: left;
+      font-size: 0.9em;
+      border: 0px solid transparent;
+      background: transparent;
+    }
+  }
+  .tabitem {
+    padding: 0;
+  }
+  .tab-nav {
+    padding: 0;
+    button.selected {
+      background: var(--background-fill-primary) !important;
+    }
+    button{
+      margin-bottom: -1px;
+    border: 1px solid transparent;
+    /* border-color: transparent; */
+    border-bottom: none;
+    border-top-right-radius: var(--container-radius);
+    border-top-left-radius: var(--container-radius);
+    padding: var(--size-1) var(--size-4);
+    /* color: var(--body-text-color-subdued); */
+    font-weight: var(--section-header-text-weight);
+    font-size: var(--section-header-text-size);
+    }
+  }
+}
+
+// gradio-app {
+//   background-color: $background !important;
+// }
+
+// .gradio-dropdown div.wrap.wrap.wrap.wrap,
+// textarea
+// {
+//   background-color: $background-secondary !important;
+//   color: $font-color !important;
+//   border: 0px solid transparent !important;
+// }
+
+// .gradio-tabitem {
+//   border: 0px solid transparent !important;
+// }
+
+// .panel {
+//   background-color: $background !important;
+// }

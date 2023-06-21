@@ -1,0 +1,25 @@
+@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+@import "../vars.scss";
+
+@mixin icon-replacement($selector, $unicode, $color) {
+  #{$selector} {
+    color: transparent;
+    position: relative;
+
+    &:before {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      content: $unicode;
+      font-family: FontAwesome;
+      font: normal normal normal 14px/1 FontAwesome;
+      font-size: inherit;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      display: block;
+      color: $color;
+    }
+  }
+}

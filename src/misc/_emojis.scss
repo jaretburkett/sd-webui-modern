@@ -1,0 +1,33 @@
+@import "icons";
+@import "../vars.scss";
+
+$icon-color: var(--button-secondary-text-color);
+
+// ♻️ -> fa-recycle
+@include icon-replacement("#txt2img_reuse_seed, #img2img_reuse_seed", "\f1b8", $icon-color);
+
+ // 🎲️  -> fa-random
+@include icon-replacement("#txt2img_random_seed, #img2img_random_seed", "\f074", $icon-color);
+
+// 📂 -> fa-folder-open
+// first button of image_buttons_txt2img
+@include icon-replacement("#image_buttons_txt2img > button:nth-child(1), #image_buttons_img2img > button:nth-child(1)", "\f07c", $icon-color);
+
+// ↙️ -> fa-arrow-circle-down
+@include icon-replacement("#txt2img_tools #paste", "\f0ab", $icon-color);
+
+// 🗑️ -> fa-trash
+@include icon-replacement("#txt2img_clear_prompt", "\f1f8", $icon-color);
+
+// 🎴 -> fa-list-alt
+@include icon-replacement("#txt2img_extra_networks", "\f022", $icon-color);
+
+// 🔄 -> fa-refresh
+@include icon-replacement("#refresh_sd_model_checkpoint, #refresh_txt2img_styles", "\f021", $icon-color);
+
+// 📋 -> fa-clipboard
+@include icon-replacement("#txt2img_style_apply", "\f0ea", $icon-color);
+
+// 💾 -> fa-save
+@include icon-replacement("#txt2img_style_create", "\f0c7", $icon-color);
+
