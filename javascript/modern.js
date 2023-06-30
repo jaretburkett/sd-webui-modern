@@ -1,6 +1,36 @@
 (function () {
   console.log("modern.js loded");
 
+  function delay(ms) {
+    return new Promise((resolve) => setTimeout(resolve, ms));
+  }
+
+  function waitForElm(selector) {
+    return new Promise(async (resolve) => {
+      if (document.querySelector(selector)) {
+        return resolve(document.querySelector(selector));
+      } else {
+        while (document.querySelector(selector) === null) {
+          // wait for 100ms
+          await delay(100);
+          console.log("waiting for " + selector)
+        }
+        return resolve(document.querySelector(selector));
+      }
+    });
+  }
+
+  function waitUntilLoaded(callback) {
+    // need to wait until gradio loads everything in the DOM
+    waitForElm("#quicksettings").then(() => {
+      console.log("quicksettings loaded");
+      // do an animation frame just to make sure
+      window.requestAnimationFrame(() => {
+        callback();
+      });
+    });
+  }
+
   const emojiList = [
     ["♻️", "fa-recycle"],
     ["🎲️", "fa-random"],
@@ -25,33 +55,11 @@
   ];
 
   function tagEmojis() {
-    console.log("tagEmojis() called");
-    // Get all elements in the document body:
-    let all = document.body.getElementsByTagName("*");
-
-    // Go through every element:
-    for (let i = 0, max = all.length; i < max; i++) {
-      let htmlContent = all[i].innerHTML;
-
-      // If the innerHTML contains one of your emojis, wrap it in a <span> with a class:
-      for (let e = 0; e < emojiList.length; e++) {
-        if (htmlContent.includes(emojiList[e][0])) {
-          all[i].innerHTML = htmlContent.replace(
-            new RegExp(emojiList[e][0], "g"),
-            '<i class="fa ' + emojiList[e][1] + '"></i>'
-          );
-        }
-      }
-    }
+   // eventually fix, but for now, we cannot replace all emojis one by one as it is too taxing on the browser
   }
 
-  console.log('setting up listners')
   // when document is fully loaded and ready
-  document.addEventListener("DOMContentLoaded", () => {
+  waitUntilLoaded(() => {
     tagEmojis();
   });
-  // if it is already loaded, tag emojis
-  if (document.readyState === "complete") {
-    tagEmojis();
-  }
 })();

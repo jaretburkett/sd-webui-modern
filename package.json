@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "sass src/style.scss style.css --watch"
+    "build": "sass --no-source-map src/style.scss style.css",
+    "start": "sass --no-source-map src/style.scss style.css --watch"
   },
   "author": "",
   "license": "ISC",

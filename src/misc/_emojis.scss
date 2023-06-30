@@ -4,30 +4,32 @@
 $icon-color: var(--button-secondary-text-color);
 
 // ♻️ -> fa-recycle
-@include icon-replacement("#txt2img_reuse_seed, #img2img_reuse_seed", "\f1b8", $icon-color);
+@include icon-replacement("#txt2img_reuse_seed, #txt2img_reuse_subseed, #img2img_reuse_seed, #img2img_reuse_subseed", "\f1b8", $icon-color);
 
  // 🎲️  -> fa-random
-@include icon-replacement("#txt2img_random_seed, #img2img_random_seed", "\f074", $icon-color);
+@include icon-replacement("#txt2img_random_seed, #txt2img_random_subseed, #img2img_random_seed, #img2img_random_subseed", "\f074", $icon-color);
 
 // 📂 -> fa-folder-open
 // first button of image_buttons_txt2img
-@include icon-replacement("#image_buttons_txt2img > button:nth-child(1), #image_buttons_img2img > button:nth-child(1)", "\f07c", $icon-color);
+@include icon-replacement("#image_buttons_txt2img > button:nth-child(1), #image_buttons_img2img > button:nth-child(1), #image_buttons_extras > button:nth-child(1)", "\f07c", $icon-color);
 
 // ↙️ -> fa-arrow-circle-down
-@include icon-replacement("#txt2img_tools #paste", "\f0ab", $icon-color);
+@include icon-replacement("#txt2img_tools #paste, #img2img_tools #paste", "\f0ab", $icon-color);
 
 // 🗑️ -> fa-trash
-@include icon-replacement("#txt2img_clear_prompt", "\f1f8", $icon-color);
+@include icon-replacement("#txt2img_clear_prompt, #img2img_clear_prompt", "\f1f8", $icon-color);
 
-// 🎴 -> fa-list-alt
-@include icon-replacement("#txt2img_extra_networks", "\f022", $icon-color);
+// 🎴 -> fa-sitemap
+@include icon-replacement("#txt2img_extra_networks, #img2img_extra_networks", " \f0e8", $icon-color);
 
 // 🔄 -> fa-refresh
-@include icon-replacement("#refresh_sd_model_checkpoint, #refresh_txt2img_styles", "\f021", $icon-color);
+@include icon-replacement("#refresh_sd_model_checkpoint, #refresh_txt2img_styles, #refresh_img2img_styles", "\f021", $icon-color);
 
 // 📋 -> fa-clipboard
-@include icon-replacement("#txt2img_style_apply", "\f0ea", $icon-color);
+@include icon-replacement("#txt2img_style_apply, #img2img_style_apply", "\f0ea", $icon-color);
 
 // 💾 -> fa-save
-@include icon-replacement("#txt2img_style_create", "\f0c7", $icon-color);
+@include icon-replacement("#txt2img_style_create, #img2img_style_create", "\f0c7", $icon-color);
 
+// 📐 -> fa-sorted
+@include icon-replacement("#img2img_detect_image_size_btn", "\f0dc", $icon-color);
